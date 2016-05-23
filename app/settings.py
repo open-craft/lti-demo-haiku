@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app',
     'haiku',
+    'django_lti_tool_provider'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,6 +64,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'app.wsgi.application'
+
+# Session cookie: use a different name from edx
+SESSION_COOKIE_NAME = 'lti-haiku'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -144,6 +148,15 @@ LOGGING = {
 # Sensitive settings
 # These are sensitive settings, and should be overridden in local_settings.py
 SECRET_KEY = os.environ.get('SECRET_KEY', None)
+
+# LTI settings
+LTI_HOME_PAGE = 'haiku:home'
+LTI_CLIENT_KEY = os.environ.get('LTI_CLIENT_KEY', None)
+LTI_CLIENT_SECRET = os.environ.get('LTI_CLIENT_SECRET', None)
+
+# Used to automatically generate stable passwords from anonymous user ids coming from LTI requests.
+# If compromised, attackers would be able to restore any student passwords knowing his anonymous user ID from LMS
+PASSWORD_GENERATOR_NONCE = os.environ.get('PASSWORD_GENERATOR_NONCE', None)
 
 try:
     from .local_settings import *
