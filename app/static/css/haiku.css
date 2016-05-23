@@ -1,0 +1,63 @@
+body, * {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans",Arial,Helvetica,sans-serif;
+}
+body {
+    font-size: 16px;
+    padding-top: 1em;
+}
+.help-text {
+    padding: 1em;
+}
+#edit-haiku textarea {
+    width: 50ex;
+    height: 4em;
+}
+.poem {
+    white-space: pre;
+}
+button {
+    background-color: #007db8;
+    color: white;
+    font-size: 125%;
+    line-height: 125%;
+    padding: 8px 10px;
+    box-shadow: none;
+    border: 0;
+    border-radius: 2px;
+    margin-right: 1em;
+}
+button:hover {
+    top: -1px;
+}
+button:active {
+    top: 1px;
+}
+.links li {
+    display: inline;
+    list-style-type: none;
+}
+.links li:before {
+    content: " | ";
+}
+.links li:first-child:before {
+    content: "";
+}
+.columns > * {
+    display: inline-block;
+}
+.haiku {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: thin grey solid;
+}
+.score {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: #666;
+    font-weight: 100;
+}
+.score label:after {
+    content: ': ';
+}
